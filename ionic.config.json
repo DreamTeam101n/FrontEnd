@@ -1,0 +1,7 @@
+{
+  "name": "game_app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
