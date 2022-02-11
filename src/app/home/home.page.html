@@ -1,20 +1,54 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-title>Title Only</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <div id="section1" style="margin: 10% 0% 10% 10%;">
+      <h4>
+        Meet morphy in his new adventure across Dreams
+      </h4>
+      <p>
+        Morphy the little God of dreams awaits you in 
+        different dreams
+      </p>
+  </div>
+  <div id="section2" style="margin: 10% 10% 10% 10%; text-align: center;">
+    <h4>
+      Characters:
+    </h4>
+    <div class="row">
+      <div class="column">
+        Morphy
+      </div>
+      <div class="column">
+        Morphys Brother
+      </div>
+    </div>
+</div>
+  <div id="seccion2">
+    seccion1
+  </div>
+  <div id="seccion3">
+    seccion1
+  </div>
+  <div id="seccion4">
+    seccion1
   </div>
 </ion-content>
+
+
+<style>
+  .column {
+  float: left;
+  width: 50%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
