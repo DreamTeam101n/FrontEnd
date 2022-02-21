@@ -3,52 +3,54 @@
     <ion-title>Title Only</ion-title>
   </ion-toolbar>
 </ion-header>
-
 <ion-content [fullscreen]="true">
-  <div id="section1" style="margin: 10% 0% 10% 10%;">
-      <h4>
-        Meet morphy in his new adventure across Dreams
-      </h4>
-      <p>
-        Morphy the little God of dreams awaits you in 
-        different dreams
-      </p>
-  </div>
-  <div id="section2" style="margin: 10% 10% 10% 10%; text-align: center;">
-    <h4>
-      Characters:
-    </h4>
-    <div class="row">
-      <div class="column">
-        Morphy
-      </div>
-      <div class="column">
-        Morphys Brother
-      </div>
-    </div>
-</div>
-  <div id="seccion2">
-    seccion1
-  </div>
-  <div id="seccion3">
-    seccion1
-  </div>
-  <div id="seccion4">
-    seccion1
-  </div>
+  <ion-grid class="background" style="height: 100%;">
+    <ion-row>
+      <ion-col size="6">
+        <ion-button expand="block" shape="round" color="light">
+          <strong>More information</strong>
+        </ion-button>
+      </ion-col>
+      <ion-col size="6">
+        <ion-button expand="block" shape="round" color="warning">
+          <strong> Buy Now</strong>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid fixed>
+    <ion-row id="section1" style="margin: 10% 10% 10% 10%; text-align: center;">
+      <ion-col size="12">
+        <h4>
+          Meet morphy in his new adventure across Dreams
+        </h4>
+        <p>
+          Morphy the little God of dreams awaits you in 
+          different dreams
+        </p>
+      </ion-col>
+    </ion-row>
+
+    <ion-row id="section2" style="margin: 10% 10% 10% 10%; text-align: center;">
+      <ion-col size="6">
+        <h4>Morphy</h4>
+        <p>
+          The protagonist of the story
+        </p>
+        <p>
+          His main objetive is to recover his treasuse that was 
+          stoled by his big brother
+        </p>
+      </ion-col>
+      <ion-col size="6">
+        <h4>Thanatos</h4>
+        <p>
+          Morphy's big brother and the antagonist of the story
+        </p>
+        <p>
+          He likes to prank his little brother
+        </p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
-
-
-<style>
-  .column {
-  float: left;
-  width: 50%;
-}
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-</style>
