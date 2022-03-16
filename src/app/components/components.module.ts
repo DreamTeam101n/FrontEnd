@@ -7,6 +7,9 @@ import { IonicModule } from '@ionic/angular';
   declarations:[
     NavbarComponent
   ],
+  exports: [
+    NavbarComponent
+  ],
   imports:[
     CommonModule,
     IonicModule
