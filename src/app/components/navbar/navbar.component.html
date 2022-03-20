@@ -1,4 +1,4 @@
-<ion-tabs>
+<ion-tabs *ngIf="!isDesktop">
   <ion-tab-bar slot="bottom,top">
     <ion-tab-button (click)="home()">
       <ion-icon name="home"></ion-icon>
@@ -14,3 +14,23 @@
     </ion-tab-button>
   </ion-tab-bar>
 </ion-tabs>
+
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="home()">
+        <ion-icon slot="start" name="logo-angular"></ion-icon>
+        Logo Here...
+      </ion-button>
+    </ion-buttons>
+    <ion-button color="dark" (click)="home()" fill="clear" routerDirection="root">
+      Home
+    </ion-button>
+    <ion-button color="dark" (click)="stats()" fill="clear" routerDirection="root">
+      Stats
+    </ion-button>
+    <ion-button color="dark" (click)="profile()" fill="clear" routerDirection="root">
+      Profile
+    </ion-button>
+  </ion-toolbar>
+</ion-header>

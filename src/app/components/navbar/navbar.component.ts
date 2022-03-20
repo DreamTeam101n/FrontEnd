@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ScreensizeService } from 'src/app/services/screensize.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +8,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent implements OnInit {
-
-  constructor(public router: Router) { }
-
+  isDesktop: boolean;
+  constructor(private router: Router, private screensize: ScreensizeService) {
+    screensize.isDesktopView().subscribe((isDesktop) => {
+      this.isDesktop = isDesktop;
+    });
+  }
   ngOnInit() {}
   home(){
     this.router.navigate(['home']);
