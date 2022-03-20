@@ -15,7 +15,7 @@
   </ion-tab-bar>
 </ion-tabs>
 
-<ion-header>
+<ion-header *ngIf="isDesktop">
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-button (click)="home()">
