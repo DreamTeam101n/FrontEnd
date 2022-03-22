@@ -4,10 +4,10 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content style="min-width: 300px;">
   <ion-card class="ion-margin-horizontal">
     <ion-card-header>
-      <ion-card-title>Register</ion-card-title>
+      <ion-card-title class="ion-text-center">Register</ion-card-title>
     </ion-card-header>
     <ion-card-content >
       <form [formGroup]="formRegister" (ngSubmit)="registerSubmit()">
@@ -26,13 +26,13 @@
           <ion-label>Email</ion-label>
           <ion-input formControlName="email" required></ion-input>
         </ion-item>
-        <ion-row class="ion-justify-content-center">
-          <ion-col size="2">
+        <ion-row class="ion-justify-content-center ion-margin-top">
+          <ion-col size="2" sizeSm="4" sizeXs="6">
             <ion-button color="danger" [routerLink]="['/home']">
               <ion-label>Cancel</ion-label>
             </ion-button>
           </ion-col>
-          <ion-col size="2">
+          <ion-col size="2" sizeSm="4" sizeXs="6">
             <ion-button color="success" type="submit" [disabled]="!formRegister.valid">
               <ion-label>Register</ion-label>
             </ion-button>
