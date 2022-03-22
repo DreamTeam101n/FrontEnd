@@ -20,5 +20,7 @@ export class LoginPage implements OnInit {
 
   ngOnInit() {
   }
-
+  logSubmit(){
+    console.log(this.formLogin.valid);
+  }
 }
