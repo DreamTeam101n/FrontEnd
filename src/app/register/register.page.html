@@ -9,8 +9,8 @@
     <ion-card-header>
       <ion-card-title class="ion-text-center">Register</ion-card-title>
     </ion-card-header>
-    <ion-card-content >
-      <form [formGroup]="formRegister" (ngSubmit)="registerSubmit()">
+    <ion-card-content *ngIf="!this.isSuccessful">
+      <form [formGroup]="formRegister" (ngSubmit)="formRegister.valid && registerSubmit()">
         <ion-item>
           <ion-icon name="person-circle-outline"></ion-icon>
           <ion-label>Name</ion-label>
@@ -39,6 +39,11 @@
           </ion-col>
         </ion-row>
       </form>
+    </ion-card-content>
+    <ion-card-content *ngIf="isSuccessful">
+      <ion-item slot="start">
+        <ion-label>Register done successfully!</ion-label>
+      </ion-item>
     </ion-card-content>
   </ion-card>
 </ion-content>
