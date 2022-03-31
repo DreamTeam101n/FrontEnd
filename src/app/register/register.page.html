@@ -4,13 +4,13 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content style="min-width: 300px;">
   <ion-card class="ion-margin-horizontal">
     <ion-card-header>
-      <ion-card-title>Register</ion-card-title>
+      <ion-card-title class="ion-text-center">Register</ion-card-title>
     </ion-card-header>
-    <ion-card-content >
-      <form [formGroup]="formRegister">
+    <ion-card-content *ngIf="!this.isSuccessful">
+      <form [formGroup]="formRegister" (ngSubmit)="formRegister.valid && registerSubmit()">
         <ion-item>
           <ion-icon name="person-circle-outline"></ion-icon>
           <ion-label>Name</ion-label>
@@ -26,20 +26,24 @@
           <ion-label>Email</ion-label>
           <ion-input formControlName="email" required></ion-input>
         </ion-item>
-        <ion-row>
-          <ion-col size="6">
-            <ion-item button>
+        <ion-row class="ion-justify-content-center ion-margin-top">
+          <ion-col size="2" sizeSm="4" sizeXs="6">
+            <ion-button color="danger" [routerLink]="['/home']">
               <ion-label>Cancel</ion-label>
-            </ion-item>
+            </ion-button>
           </ion-col>
-          <ion-col size="6">
-            <ion-item button >
+          <ion-col size="2" sizeSm="4" sizeXs="6">
+            <ion-button color="success" type="submit" [disabled]="!formRegister.valid">
               <ion-label>Register</ion-label>
-            </ion-item>
+            </ion-button>
           </ion-col>
         </ion-row>
-
       </form>
+    </ion-card-content>
+    <ion-card-content *ngIf="isSuccessful">
+      <ion-item slot="start">
+        <ion-label>Register done successfully!</ion-label>
+      </ion-item>
     </ion-card-content>
   </ion-card>
 </ion-content>
