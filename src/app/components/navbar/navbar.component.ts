@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ScreensizeService } from 'src/app/services/screensize.service';
+import { TokenStorageService } from 'src/app/services/token-storage.service';
 
 @Component({
   selector: 'app-navbar',
@@ -9,12 +10,18 @@ import { ScreensizeService } from 'src/app/services/screensize.service';
 })
 export class NavbarComponent implements OnInit {
   isDesktop: boolean;
-  constructor(private router: Router, private screensize: ScreensizeService) {
+  isLogged = false;
+  constructor(private router: Router, private screensize: ScreensizeService, private token: TokenStorageService) {
     screensize.isDesktopView().subscribe((isDesktop) => {
       this.isDesktop = isDesktop;
     });
   }
-  ngOnInit() {}
+  ngOnInit() {
+    if(this.token.getUser()){
+      this.isLogged = true;
+    }
+    console.log(this.isLogged);
+  }
   home(){
     this.router.navigate(['home']);
   }
@@ -23,5 +30,15 @@ export class NavbarComponent implements OnInit {
   }
   profile(){
     this.router.navigate(['profile']);
+  }
+  login(){
+    this.router.navigate(['login']);
+  }
+  register(){
+    this.router.navigate(['register']);
+  }
+  logout(){
+    this.token.signOut();
+    window.location.reload();
   }
 }

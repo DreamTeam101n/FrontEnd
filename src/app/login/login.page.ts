@@ -43,7 +43,7 @@ export class LoginPage implements OnInit {
         this.token.saveUser(data.userInfo);
         this.isLoginFailed = false;
         this.isLoggedIn = true;
-        /*window.location.reload();*/
+        window.location.reload();
       },
       error: err => {
         this.errorMessage = err.error.message;
