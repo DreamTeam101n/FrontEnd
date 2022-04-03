@@ -7,11 +7,25 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
+import { authInterceptorProviders } from './helpers/auth.interceptor';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { ComponentsModule } from './components/components.module';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  imports: [
+    BrowserModule,
+    IonicModule.forRoot(),
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    ComponentsModule],
+  providers: [
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    authInterceptorProviders,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

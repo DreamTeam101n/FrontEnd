@@ -1,0 +1,68 @@
+<ion-tabs *ngIf="!isDesktop">
+  <ion-tab-bar slot="bottom,top">
+    <ion-tab-button (click)="home()">
+      <ion-icon name="home"></ion-icon>
+      <ion-label>Home</ion-label>
+    </ion-tab-button>
+    <div *ngIf="isLogged; then thenBlock else elseBlock"></div>
+    <ng-template #thenBlock>
+      <ion-tab-button (click)="stats()">
+        <ion-icon name="game-controller"></ion-icon>
+        <ion-label>Stats</ion-label>
+      </ion-tab-button>
+      <ion-tab-button (click)="profile()">
+        <ion-icon name="person-circle"></ion-icon>
+        <ion-label>Profile</ion-label>
+      </ion-tab-button>
+      <ion-tab-button (click)="logout()">
+        <ion-icon name="log-out-outline"></ion-icon>
+        <ion-label>Logout</ion-label>
+      </ion-tab-button>
+    </ng-template>
+    <ng-template #elseBlock>
+      <ion-tab-button (click)="login()">
+        <ion-icon name="log-in-outline"></ion-icon>
+        <ion-label>Login</ion-label>
+      </ion-tab-button>
+      <ion-tab-button (click)="register()">
+        <ion-icon name="person-circle"></ion-icon>
+        <ion-label>Register</ion-label>
+      </ion-tab-button>
+    </ng-template>
+  </ion-tab-bar>
+</ion-tabs>
+
+<ion-header *ngIf="isDesktop">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="home()">
+        <ion-icon slot="start" name="logo-angular"></ion-icon>
+        Logo Here...
+      </ion-button>
+    </ion-buttons>
+    <ion-button color="dark" (click)="home()" fill="clear" routerDirection="root">
+      Home
+    </ion-button>
+    <div *ngIf="isLogged; then thenBlock else elseBlock"></div>
+    <ng-template #thenBlock>
+      <ion-button color="dark" (click)="stats()" fill="clear" routerDirection="root">
+        Stats
+      </ion-button>
+      <ion-button color="dark" (click)="profile()" fill="clear" routerDirection="root">
+        Profile
+      </ion-button>
+      <ion-button color="dark" (click)="logout()" fill="clear" routerDirection="root" slot="end" class="ion-margin-end">
+        Logout
+      </ion-button>
+    </ng-template>
+    <ng-template #elseBlock>
+      <ion-button color="dark" (click)="login()" fill="clear" routerDirection="root">
+        Login
+      </ion-button>
+      <ion-button color="dark" (click)="register()" fill="clear" routerDirection="root">
+        Register
+      </ion-button>
+    </ng-template>
+
+  </ion-toolbar>
+</ion-header>

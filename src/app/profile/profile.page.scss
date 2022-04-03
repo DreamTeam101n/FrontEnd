@@ -1,0 +1,68 @@
+.css-after-gradiant {
+    position: relative;
+}
+.css-after-gradiant img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+.css-after-gradiant::after {
+    content: "";
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: linear-gradient(
+        90deg,
+        rgba(255, 87, 34, 1) 0%,
+        rgba(205, 220, 57, 1) 100%,
+        rgba(0, 212, 255, 1) 100%
+    );
+    display: none;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: -1;
+}
+.background{
+    background: url("../../assets/Starlight.jpg") no-repeat  center/cover fixed;
+    height: 100%;
+    width: 100%;
+}
+/* Tooltip container */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+  }
+  
+  /* Tooltip text */
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+   
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+    top: -5px;
+    left: 70%;
+  }
+  
+  /* Show the tooltip text when you mouse over the tooltip container */
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
+  .tooltip .tooltiptext::after {
+    content: " ";
+    position: absolute;
+    top: 50%;
+    right: 100%; /* To the left of the tooltip */
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent black transparent transparent;
+  }
