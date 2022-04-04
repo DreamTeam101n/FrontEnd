@@ -1,0 +1,18 @@
+<app-navbar></app-navbar>
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Current stats</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>Score:</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    {{currentScore}}
+    <ion-label *ngIf="!currentScore">There are no scores, play to get one</ion-label>
+  </ion-card-content>
+</ion-card>
+</ion-content>
