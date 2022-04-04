@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ScreensizeService } from 'src/app/services/screensize.service';
 
 @Component({
   selector: 'app-profile',
@@ -7,7 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfilePage implements OnInit {
 
-  constructor() { }
+  isDesktop: boolean;
+  constructor(
+    private screensize: ScreensizeService
+  ) {     
+    screensize.isDesktopView().subscribe((isDesktop) => {
+      this.isDesktop = isDesktop;
+    });
+  }
 
   ngOnInit() {
   }

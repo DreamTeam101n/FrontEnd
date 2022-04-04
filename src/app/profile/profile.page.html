@@ -5,15 +5,18 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-grid fixed class="background" style="height: 100%; width: 100%; z-index: -1;">
+<ion-content [fullscreen]="true" class="background">
+  <ion-grid fixed style="height: 100%; width: 100%; z-index: -1;">
     <ion-card style="margin-right: 100px; margin-left: 100px;">
       <ion-card-content style="z-index: 1;">
         <ion-grid fixed>
           <ion-row>
             <ion-col size="3" style="text-align: left;">
-              <div>
+              <div *ngIf="isDesktop">
                 <img style="width: 150px;height: 150px;border-radius: 80%;" src="https://i.pravatar.cc/75" />
+              </div>
+              <div *ngIf="!isDesktop">
+                <img style="width: 50px;height: 50px;border-radius: 80%;" src="https://i.pravatar.cc/75" />
               </div>
             </ion-col>
             <ion-col size="9" style="text-align: left;">
@@ -34,8 +37,11 @@
           <ion-row>
             <ion-col size="3" style="text-align: left;">
               <div class="tooltip">
-                <div class="css-after-gradiant">
-                  <img src="https://i.pravatar.cc/80" />
+                <div class="css-after-gradiant" *ngIf="isDesktop">
+                  <img src="https://i.pravatar.cc/76" />
+                </div>
+                <div class="css-after-gradiant" *ngIf="!isDesktop">
+                  <img style="width: 50px;height: 50px;border-radius: 80%;" src="https://i.pravatar.cc/76" />
                 </div>
                 <span class="tooltiptext">
                   Complete a campaign mission or a match of multiplayer.
@@ -59,8 +65,11 @@
           <ion-row>
             <ion-col size="3" style="text-align: left;">
               <div class="tooltip">
-                <div class="css-after-gradiant">
-                  <img src="https://i.pravatar.cc/81" />
+                <div class="css-after-gradiant" *ngIf="isDesktop">
+                  <img src="https://i.pravatar.cc/77" />
+                </div>
+                <div class="css-after-gradiant" *ngIf="!isDesktop">
+                  <img style="width: 50px;height: 50px;border-radius: 80%;" src="https://i.pravatar.cc/77" />
                 </div>
                 <span class="tooltiptext">
                   You complete the turorial
@@ -84,8 +93,11 @@
           <ion-row>
             <ion-col size="3" style="text-align: left;">
               <div class="tooltip">
-                <div class="css-after-gradiant">
-                  <img src="https://i.pravatar.cc/82" />
+                <div class="css-after-gradiant" *ngIf="isDesktop">
+                  <img src="https://i.pravatar.cc/78" />
+                </div>
+                <div class="css-after-gradiant" *ngIf="!isDesktop">
+                  <img style="width: 50px;height: 50px;border-radius: 80%;" src="https://i.pravatar.cc/78" />
                 </div>
                 <span class="tooltiptext">
                   You jump over an enemy
@@ -109,8 +121,11 @@
           <ion-row>
             <ion-col size="3" style="text-align: left;">
               <div class="tooltip">
-                <div class="css-after-gradiant">
-                  <img src="https://i.pravatar.cc/83" />
+                <div class="css-after-gradiant" *ngIf="isDesktop">
+                  <img src="https://i.pravatar.cc/79" />
+                </div>
+                <div class="css-after-gradiant" *ngIf="!isDesktop">
+                  <img style="width: 50px;height: 50px;border-radius: 80%;" src="https://i.pravatar.cc/79" />
                 </div>
                 <span class="tooltiptext">
                   Collect one treasure
@@ -134,8 +149,11 @@
           <ion-row>
             <ion-col size="3" style="text-align: left;">
               <div class="tooltip">
-                <div class="css-after-gradiant">
-                  <img src="https://i.pravatar.cc/84" />
+                <div class="css-after-gradiant" *ngIf="isDesktop">
+                  <img src="https://i.pravatar.cc/74" />
+                </div>
+                <div class="css-after-gradiant" *ngIf="!isDesktop">
+                  <img style="width: 50px;height: 50px;border-radius: 80%;" src="https://i.pravatar.cc/74" />
                 </div>
                 <span class="tooltiptext">
                   Find a secret
@@ -159,8 +177,11 @@
           <ion-row>
             <ion-col size="3" style="text-align: left;">
               <div class="tooltip">
-                <div class="css-after-gradiant">
-                  <img src="https://i.pravatar.cc/85" />
+                <div class="css-after-gradiant" *ngIf="isDesktop">
+                  <img src="https://i.pravatar.cc/73" />
+                </div>
+                <div class="css-after-gradiant" *ngIf="!isDesktop">
+                  <img style="width: 50px;height: 50px;border-radius: 80%;" src="https://i.pravatar.cc/73" />
                 </div>
                 <span class="tooltiptext">
                   Lose one time
@@ -184,8 +205,11 @@
           <ion-row>
             <ion-col size="3" style="text-align: left;">
               <div class="tooltip">
-                <div class="css-after-gradiant">
-                  <img src="https://i.pravatar.cc/86" />
+                <div class="css-after-gradiant" *ngIf="isDesktop">
+                  <img src="https://i.pravatar.cc/72" />
+                </div>
+                <div class="css-after-gradiant" *ngIf="!isDesktop">
+                  <img style="width: 50px;height: 50px;border-radius: 80%;" src="https://i.pravatar.cc/72" />
                 </div>
                 <span class="tooltiptext">
                   You finished the game
